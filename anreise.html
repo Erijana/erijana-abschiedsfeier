@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Anreise & Mobilität – Erijanas Abschiedsfeier</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           FARBEN
+           ===================================================== */
+
+        :root {
+            --cream: #f8f3eb;
+            --paper: #fffdf9;
+            --beige: #d8c6b0;
+            --beige-light: #eadfd1;
+            --taupe: #9a8671;
+            --brown: #655346;
+            --dark: #40362e;
+            --line: #e2d6c8;
+        }
+
+
+        /* =====================================================
+           GRUNDLAGEN
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            background:
+                url("images/0_Haupthintergrund.jpg")
+                center center
+                / cover
+                fixed
+                no-repeat;
+
+            color: var(--dark);
+
+            font-family:
+                "Montserrat",
+                Arial,
+                sans-serif;
+
+            line-height: 1.7;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-weight: 600;
+        }
+
+
+        p {
+            max-width: 650px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =====================================================
+           SEITE
+           ===================================================== */
+
+        .page {
+            min-height: 100vh;
+
+            padding:
+                30px 25px 100px;
+        }
+
+
+        .page-content {
+            width:
+                min(100%, 950px);
+
+            margin:
+                0 auto;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           ZURÜCK BUTTON
+           ===================================================== */
+
+        .back-button {
+            display: inline-block;
+
+            margin-bottom: 60px;
+
+            padding:
+                11px 20px;
+
+            border:
+                1px solid var(--taupe);
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(255,253,249,.90);
+
+            color: var(--brown);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+
+        .back-button:hover {
+            transform:
+                translateY(-2px);
+
+            background:
+                var(--paper);
+        }
+
+
+        /* =====================================================
+           TITEL
+           ===================================================== */
+
+        .small-label {
+            text-transform: uppercase;
+
+            letter-spacing: .25em;
+
+            font-size: 11px;
+
+            color: var(--taupe);
+        }
+
+
+        .page-title {
+            font-size:
+                clamp(55px, 9vw, 82px);
+
+            line-height: 1;
+
+            margin:
+                15px 0 25px;
+        }
+
+
+        .page-intro {
+            max-width: 650px;
+
+            margin:
+                0 auto 70px;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           INFO-KARTEN
+           ===================================================== */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            text-align: left;
+        }
+
+
+        .info-card {
+            padding:
+                35px 30px;
+
+            background:
+                rgba(255,253,249,.92);
+
+            border:
+                1px solid var(--line);
+
+            box-shadow:
+                0 15px 45px
+                rgba(70,55,40,.08);
+        }
+
+
+        .info-icon {
+            display: block;
+
+            margin-bottom: 15px;
+
+            font-size: 28px;
+
+            color: var(--brown);
+        }
+
+
+        .info-card h2 {
+            font-size: 34px;
+
+            line-height: 1.1;
+
+            margin:
+                0 0 15px;
+        }
+
+
+        .info-card p {
+            margin:
+                0 0 15px;
+
+            max-width: none;
+
+            font-size: 14px;
+        }
+
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           LINKS
+           ===================================================== */
+
+        .info-link {
+            color: var(--brown);
+
+            font-weight: 600;
+
+            text-decoration:
+                underline;
+
+            text-underline-offset: 3px;
+        }
+
+
+        /* =====================================================
+           SPRACHEN
+           ===================================================== */
+
+        .language-de {
+            display: initial;
+        }
+
+
+        .language-sq {
+            display: none;
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding:
+                    20px 20px 70px;
+            }
+
+
+            .back-button {
+                margin-bottom:
+                    45px;
+            }
+
+
+            .page-intro {
+                margin-bottom:
+                    45px;
+            }
+
+
+            .info-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .info-card {
+                padding:
+                    28px 22px;
+            }
+
+
+            .info-card h2 {
+                font-size:
+                    30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+        <div class="page-content">
+
+
+            <!-- =================================================
+                 ZURÜCK
+                 ================================================= -->
+
+	<a
+	    href="index.html#guests"
+	    class="back-button"
+	    onclick="sessionStorage.setItem('returnToGuests', 'true'); 	sessionStorage.setItem('returnLanguage', 	localStorage.getItem('selectedLanguage') || 'de');"
+	>
+
+                <span class="language-de">
+                    ← Zurück zu Gäste
+                </span>
+
+                <span class="language-sq">
+                    ← Kthehu te mysafirët
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 TITEL
+                 ================================================= -->
+
+            <p class="small-label language-de">
+                Für unsere Gäste
+            </p>
+
+            <p class="small-label language-sq">
+                Për mysafirët tanë
+            </p>
+
+
+            <h1 class="page-title language-de">
+                Anreise & Mobilität
+            </h1>
+
+            <h1 class="page-title language-sq">
+                Udhëtimi & Mobiliteti
+            </h1>
+
+
+            <p class="page-intro language-de">
+                Damit eure Anreise so entspannt wie möglich verläuft,
+                haben wir die wichtigsten Informationen für euch
+                zusammengestellt.
+            </p>
+
+
+            <p class="page-intro language-sq">
+                Që udhëtimi juaj të jetë sa më i qetë dhe i rehatshëm,
+                kemi përmbledhur informacionet më të rëndësishme
+                për ju.
+            </p>
+
+
+
+            <!-- =================================================
+                 INFORMATIONEN
+                 ================================================= -->
+
+            <div class="info-grid">
+
+
+                <!-- FLUGHAFEN -->
+
+                <article class="info-card">
+
+ 
+                    <h2 class="language-de">
+                        Flughafen Ohrid
+                    </h2>
+
+                    <h2 class="language-sq">
+                        Aeroporti i Ohrit
+                    </h2>
+
+
+                    <p class="language-de">
+                        Der nächstgelegene Flughafen ist der
+                        Internationale Flughafen Ohrid (OHD). Von dort
+                        aus erreicht ihr Struga in etwa 10 bis 15 Minuten.
+                    </p>
+
+                    <p class="language-sq">
+                        Aeroporti më i afërt është Aeroporti
+                        Ndërkombëtar i Ohrit (OHD). Nga atje mund të
+                        arrini në Strugë për rreth 10 deri në 15 minuta.
+                    </p>
+
+                </article>
+
+
+
+                <!-- MIETWAGEN -->
+
+                <article class="info-card">
+
+
+                    <h2 class="language-de">
+                        Mietwagen
+                    </h2>
+
+                    <h2 class="language-sq">
+                        Makina me qira
+                    </h2>
+
+
+                    <p class="language-de">
+			Wer während seines Aufenthalts flexibel sein möchte und 			die wunderschöne Umgebung rund um den Ohridsee erkunden 			möchte, für den ist ein Mietwagen eine gute Option. Da 				die ÖV-Möglichkeiten in Struga begrenzt sind, bietet ein 			Auto mehr Unabhängigkeit bei Ausflügen. Informationen zu 			Parkmöglichkeiten erhaltet ihr direkt bei eurer 				Unterkunft.                        
+                    </p>
+
+                    <p class="language-sq">
+			Për ata që dëshirojnë të jenë fleksibël gjatë qëndrimit 			dhe të eksplorojnë rrethinat e bukura të liqenit të 				Ohrit, një makinë me qira është një mundësi e mirë. Duke 			pasur parasysh se transporti publik në Strugë është i 				kufizuar, një automjet ju mundëson të udhëtoni më lehtë 			dhe në mënyrë më të pavarur. Informacione për mundësitë e 			parkimit mund të merrni drejtpërdrejt në akomodimin tuaj.
+                    </p>
+
+                </article>
+
+
+                <!-- MOBILITÄT VOR ORT -->
+
+                <article class="info-card">
+
+
+                    <h2 class="language-de">
+                        Mobilität vor Ort
+                    </h2>
+
+                    <h2 class="language-sq">
+                        Lëvizja në vend
+                    </h2>
+
+
+                    <p class="language-de">
+			Das Zentrum von Struga, die Uferpromenade sowie viele 				Restaurants, Cafés und Geschäfte lassen sich bequem zu 				Fuss erkunden. Für längere Strecken oder Fahrten am Abend 			stehen in der Stadt und Umgebung ausreichend Taxis zur 				Verfügung.                        
+                    </p>
+
+                    <p class="language-sq">
+			Qendra e Strugës, atraksione ne rajon, si edhe shumë 				restorante, kafene dhe dyqane, mund të eksplorohen 				lehtësisht në këmbë. Për distanca më të gjata ose 				udhëtime në mbrëmje, në qytet dhe në zonën përreth ka 				mjaft taksi në dispozicion.                        
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         SPRACHE AUS LOCALSTORAGE LADEN
+         ===================================================== -->
+
+    <script>
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+
+        function getCorrectDisplayValue(element) {
+
+            const tag =
+                element.tagName.toLowerCase();
+
+
+            if (tag === "span") {
+                return "inline";
+            }
+
+
+            if (tag === "a") {
+                return "inline-block";
+            }
+
+
+            if (tag === "button") {
+                return "inline-block";
+            }
+
+
+            return "block";
+
+        }
+
+
+        function setPageLanguage(language) {
+
+            const germanElements =
+                document.querySelectorAll(
+                    ".language-de"
+                );
+
+            const albanianElements =
+                document.querySelectorAll(
+                    ".language-sq"
+                );
+
+
+            if (language === "de") {
+
+                document.documentElement.lang = "de";
+
+
+                germanElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            getCorrectDisplayValue(element);
+
+                    }
+                );
+
+
+                albanianElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
+                    }
+                );
+
+            }
+
+
+            if (language === "sq") {
+
+                document.documentElement.lang = "sq";
+
+
+                germanElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
+                    }
+                );
+
+
+                albanianElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            getCorrectDisplayValue(element);
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                if (savedLanguage === "sq") {
+
+                    setPageLanguage("sq");
+
+                } else {
+
+                    setPageLanguage("de");
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
