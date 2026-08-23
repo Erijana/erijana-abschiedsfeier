@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ausflugstipps – Erijanas Abschiedsfeier</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           FARBEN
+           ===================================================== */
+
+        :root {
+            --cream: #f8f3eb;
+            --paper: #fffdf9;
+            --beige: #d8c6b0;
+            --beige-light: #eadfd1;
+            --taupe: #9a8671;
+            --brown: #655346;
+            --dark: #40362e;
+            --line: #e2d6c8;
+        }
+
+
+        /* =====================================================
+           GRUNDLAGEN
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            background:
+                url("images/0_Haupthintergrund.jpg")
+                center center
+                / cover
+                fixed
+                no-repeat;
+
+            color: var(--dark);
+
+            font-family:
+                "Montserrat",
+                Arial,
+                sans-serif;
+
+            line-height: 1.7;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-weight: 600;
+        }
+
+
+        p {
+            max-width: 650px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =====================================================
+           SEITE
+           ===================================================== */
+
+        .page {
+            min-height: 100vh;
+
+            padding:
+                30px 25px 100px;
+        }
+
+
+        .page-content {
+            width:
+                min(100%, 950px);
+
+            margin:
+                0 auto;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           ZURÜCK-BUTTON
+           ===================================================== */
+
+        .back-button {
+            display: inline-block;
+
+            margin-bottom: 60px;
+
+            padding:
+                11px 20px;
+
+            border:
+                1px solid var(--taupe);
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(255,253,249,.90);
+
+            color: var(--brown);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+
+        .back-button:hover {
+            transform:
+                translateY(-2px);
+
+            background:
+                var(--paper);
+        }
+
+
+        /* =====================================================
+           TITEL
+           ===================================================== */
+
+        .small-label {
+            text-transform: uppercase;
+
+            letter-spacing: .25em;
+
+            font-size: 11px;
+
+            color: var(--taupe);
+        }
+
+
+        .page-title {
+            font-size:
+                clamp(55px, 9vw, 82px);
+
+            line-height: 1;
+
+            margin:
+                15px 0 25px;
+        }
+
+
+        .page-intro {
+            max-width: 650px;
+
+            margin:
+                0 auto 70px;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           AUSFLUG-BEREICHE
+           ===================================================== */
+
+        .trip-section {
+            margin-bottom: 60px;
+        }
+
+
+        .trip-section-title {
+            font-size:
+                clamp(35px, 5vw, 48px);
+
+            margin:
+                0 0 25px;
+        }
+
+
+        .trip-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            text-align: left;
+        }
+
+
+        /* =====================================================
+           AUSFLUG-KARTEN
+           ===================================================== */
+
+        .trip-card {
+            padding:
+                35px 30px;
+
+            background:
+                rgba(255,253,249,.92);
+
+            border:
+                1px solid var(--line);
+
+            box-shadow:
+                0 15px 45px
+                rgba(70,55,40,.08);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+
+        .trip-card:hover {
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(70,55,40,.12);
+        }
+
+
+        /* =====================================================
+           ICON
+           ===================================================== */
+
+        .trip-icon {
+            display: block;
+
+            margin-bottom: 15px;
+
+            font-size: 26px;
+
+            color: var(--brown);
+        }
+
+
+        /* =====================================================
+           TITEL DER KARTE
+           ===================================================== */
+
+        .trip-card h3 {
+            font-size: 30px;
+
+            line-height: 1.1;
+
+            margin:
+                0 0 12px;
+        }
+
+
+        /* =====================================================
+           TEXT
+           ===================================================== */
+
+        .trip-card p {
+            max-width: none;
+
+            margin:
+                0 0 12px;
+
+            font-size: 14px;
+        }
+
+
+        .trip-card p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           LINKS
+           ===================================================== */
+
+        .trip-link {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            color: var(--brown);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+
+            text-decoration:
+                underline;
+
+            text-underline-offset: 3px;
+        }
+
+
+        .trip-link:hover {
+            color: var(--dark);
+        }
+
+
+        /* =====================================================
+           SPRACHEN
+           ===================================================== */
+
+        .language-de {
+            display: initial;
+        }
+
+
+        .language-sq {
+            display: none;
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding:
+                    20px 20px 70px;
+            }
+
+
+            .back-button {
+                margin-bottom:
+                    45px;
+            }
+
+
+            .page-intro {
+                margin-bottom:
+                    45px;
+            }
+
+
+            .trip-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .trip-card {
+                padding:
+                    28px 22px;
+            }
+
+
+            .trip-card h3 {
+                font-size:
+                    28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+        <div class="page-content">
+
+
+            <!-- =================================================
+                 ZURÜCK ZU GÄSTE
+                 ================================================= -->
+
+	<a
+	    href="index.html#guests"
+	    class="back-button"
+	    onclick="sessionStorage.setItem('returnToGuests', 'true')"
+	>
+
+                <span class="language-de">
+                    ← Zurück zu Gäste
+                </span>
+
+                <span class="language-sq">
+                    ← Kthehu te mysafirët
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 TITEL
+                 ================================================= -->
+
+            <p class="small-label language-de">
+                Für unsere Gäste
+            </p>
+
+            <p class="small-label language-sq">
+                Për mysafirët tanë
+            </p>
+
+
+            <h1 class="page-title language-de">
+                Ausflugstipps
+            </h1>
+
+            <h1 class="page-title language-sq">
+                Këshilla për ekskursione
+            </h1>
+
+
+            <p class="page-intro language-de">
+                Ihr möchtet euren Aufenthalt in Struga nutzen,
+                um die Umgebung zu entdecken? Rund um den
+                Ohridsee erwarten euch beeindruckende
+                Landschaften, historische Orte und zahlreiche
+                Möglichkeiten zum Entspannen und Erkunden.
+            </p>
+
+
+            <p class="page-intro language-sq">
+                Dëshironi ta shfrytëzoni qëndrimin tuaj në Strugë
+                për të zbuluar rrethinën? Rreth liqenit të Ohrit
+                ju presin peizazhe mbresëlënëse, vende historike
+                dhe shumë mundësi për t'u çlodhur dhe për të
+                eksploruar.
+            </p>
+
+
+
+            <!-- =================================================
+                 STRUGA
+                 ================================================= -->
+
+            <section class="trip-section">
+
+                <h2 class="trip-section-title language-de">
+                    Struga
+                </h2>
+
+                <h2 class="trip-section-title language-sq">
+                    Strugë
+                </h2>
+
+
+                <div class="trip-grid">
+
+
+                    <!-- OHRIDSEE -->
+
+                    <article class="trip-card">
+
+
+                        <h3 class="language-de">
+                            Ohridsee
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Liqeni i Ohrit
+                        </h3>
+
+
+                        <p class="language-de">
+                            Der Ohridsee zählt zu den ältesten und
+                            schönsten Seen Europas. Ob zum Baden,
+                            Entspannen am Wasser oder für einen
+                            gemütlichen Spaziergang entlang des Ufers –
+                            der See prägt die gesamte Region und
+                            bietet wunderschöne Ausblicke.
+                        </p>
+
+                        <p class="language-sq">
+                            Liqeni i Ohrit është një nga liqenet më të
+                            vjetër dhe më të bukur të Evropës. Qoftë
+                            për t'u larë, për t'u çlodhur pranë ujit
+                            apo për një shëtitje të këndshme përgjatë
+                            bregut – liqeni karakterizon të gjithë
+                            rajonin dhe ofron pamje mahnitëse.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- SCHWARZE DRIN -->
+
+                    <article class="trip-card">
+
+
+                        <h3 class="language-de">
+                            Schwarze Drin
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Drini i Zi
+                        </h3>
+
+
+                        <p class="language-de">
+                            Der Fluss Schwarze Drin entspringt direkt
+                            in Struga und prägt das Stadtbild. Die
+                            Promenade entlang des Wassers eignet sich
+                            hervorragend für einen entspannten
+                            Spaziergang oder eine kleine Abkühlung
+                            an warmen Sommertagen.
+                        </p>
+
+                        <p class="language-sq">
+                            Lumi Drini i Zi buron drejtpërdrejt në
+                            Strugë dhe është pjesë e rëndësishme e
+                            pamjes së qytetit. Shëtitorja përgjatë ujit
+                            është ideale për një shëtitje të qetë ose
+                            për një freskim të vogël gjatë ditëve të
+                            ngrohta të verës.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 OHRID
+                 ================================================= -->
+
+            <section class="trip-section">
+
+                <h2 class="trip-section-title language-de">
+                    Ohrid
+                </h2>
+
+                <h2 class="trip-section-title language-sq">
+                    Ohër
+                </h2>
+
+
+                <div class="trip-grid">
+
+
+                    <!-- ALTSTADT -->
+
+                    <article class="trip-card">
+
+
+                        <h3 class="language-de">
+                            Altstadt von Ohrid
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Qyteti i vjetër i Ohrit
+                        </h3>
+
+
+                        <p class="language-de">
+                            Die historische Altstadt gehört zu den
+                            schönsten Orten Nordmazedoniens und lädt
+                            mit ihren engen Gassen, traditionellen
+                            Häusern und gemütlichen Cafés zum Erkunden
+                            und Verweilen ein.
+                        </p>
+
+                        <p class="language-sq">
+                            Qyteti historik i vjetër është një nga
+                            vendet më të bukura të Maqedonisë së Veriut
+                            dhe ju fton të eksploroni rrugicat e ngushta,
+                            shtëpitë tradicionale dhe kafenetë e këndshme.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- FESTUNG -->
+
+                    <article class="trip-card">
+
+
+                        <h3 class="language-de">
+                            Festung des Zaren Samuel
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Kalaja e Car Samuilit
+                        </h3>
+
+
+                        <p class="language-de">
+                            Hoch über der Altstadt befindet sich die
+                            historische Festung mit einem beeindruckenden
+                            Ausblick über Ohrid und den Ohridsee.
+                        </p>
+
+                        <p class="language-sq">
+                            Lart mbi qytetin e vjetër ndodhet kalaja
+                            historike, e cila ofron një pamje
+                            mbresëlënëse mbi Ohrin dhe liqenin e Ohrit.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- KIRCHEN -->
+
+                    <article class="trip-card">
+
+
+                        <h3 class="language-de">
+                            Kirchen & Sehenswürdigkeiten
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Kisha & Atraksione
+                        </h3>
+
+
+                        <p class="language-de">
+                            Ohrid ist bekannt für seine zahlreichen
+                            historischen Kirchen, Klöster und
+                            Aussichtspunkte. Besonders von den höher
+                            gelegenen Bereichen bietet sich ein
+                            beeindruckender Blick über die Altstadt
+                            und den See.
+                        </p>
+
+                        <p class="language-sq">
+                            Ohri është i njohur për kishat e tij të
+                            shumta historike, manastiret dhe pikat
+                            panoramike. Veçanërisht nga pjesët më të
+                            larta mund të shijoni një pamje
+                            mbresëlënëse mbi qytetin e vjetër dhe liqenin.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- BOOTSTOUR -->
+
+                    <article class="trip-card">
+
+
+                        <h3 class="language-de">
+                            Bootstour auf dem Ohridsee
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Shëtitje me varkë në liqenin e Ohrit
+                        </h3>
+
+
+                        <p class="language-de">
+                            Eine Bootstour gehört zu den beliebtesten
+                            Aktivitäten am Ohridsee. Vom Wasser aus
+                            lassen sich die Stadt, die umliegenden
+                            Berge und die einzigartige Landschaft aus
+                            einer ganz besonderen Perspektive erleben.
+                        </p>
+
+                        <p class="language-sq">
+                            Një shëtitje me varkë është një nga
+                            aktivitetet më të njohura në liqenin e Ohrit.
+                            Nga uji mund të përjetoni qytetin, malet
+                            përreth dhe peizazhin unik nga një
+                            këndvështrim krejtësisht i veçantë.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 UNSER TIPP
+                 ================================================= -->
+
+            <section class="trip-section">
+
+                <p class="small-label language-de">
+                    Unser Tipp
+                </p>
+
+                <p class="small-label language-sq">
+                    Këshilla jonë
+                </p>
+
+
+                <p class="page-intro language-de">
+                    Plant nach Möglichkeit etwas Zeit für beide Orte
+                    ein. Struga und Ohrid liegen nur wenige Kilometer
+                    voneinander entfernt und ergänzen sich perfekt.
+                </p>
+
+
+                <p class="page-intro language-sq">
+                    Nëse është e mundur, planifikoni pak kohë për të
+                    dyja vendet. Struga dhe Ohri ndodhen vetëm disa
+                    kilometra larg njëri-tjetrit dhe plotësojnë njëri-
+                    tjetrin në mënyrë perfekte.
+                </p>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         SPRACHLOGIK
+         ===================================================== -->
+
+    <script>
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+
+        function getCorrectDisplayValue(element) {
+
+            const tag =
+                element.tagName.toLowerCase();
+
+
+            if (tag === "span") {
+                return "inline";
+            }
+
+
+            if (tag === "small") {
+                return "inline";
+            }
+
+
+            if (tag === "a") {
+                return "inline-block";
+            }
+
+
+            if (tag === "button") {
+                return "inline-block";
+            }
+
+
+            return "block";
+
+        }
+
+
+        function setPageLanguage(language) {
+
+            const germanElements =
+                document.querySelectorAll(
+                    ".language-de"
+                );
+
+            const albanianElements =
+                document.querySelectorAll(
+                    ".language-sq"
+                );
+
+
+            if (language === "de") {
+
+                document.documentElement.lang = "de";
+
+
+                germanElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            getCorrectDisplayValue(element);
+
+                    }
+                );
+
+
+                albanianElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
+                    }
+                );
+
+            }
+
+
+            if (language === "sq") {
+
+                document.documentElement.lang = "sq";
+
+
+                germanElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
+                    }
+                );
+
+
+                albanianElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            getCorrectDisplayValue(element);
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                if (savedLanguage === "sq") {
+
+                    setPageLanguage("sq");
+
+                } else {
+
+                    setPageLanguage("de");
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

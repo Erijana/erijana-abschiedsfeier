@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aufenthalt – Erijanas Abschiedsfeier</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           FARBEN
+           ===================================================== */
+
+        :root {
+            --cream: #f8f3eb;
+            --paper: #fffdf9;
+            --beige: #d8c6b0;
+            --beige-light: #eadfd1;
+            --taupe: #9a8671;
+            --brown: #655346;
+            --dark: #40362e;
+            --line: #e2d6c8;
+        }
+
+
+        /* =====================================================
+           GRUNDLAGEN
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            background:
+                url("images/0_Haupthintergrund.jpg")
+                center center
+                / cover
+                fixed
+                no-repeat;
+
+            color: var(--dark);
+
+            font-family:
+                "Montserrat",
+                Arial,
+                sans-serif;
+
+            line-height: 1.7;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-family:
+                "Cormorant Garamond",
+                Georgia,
+                serif;
+
+            font-weight: 600;
+        }
+
+
+        p {
+            max-width: 650px;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =====================================================
+           SEITE
+           ===================================================== */
+
+        .page {
+            min-height: 100vh;
+
+            padding:
+                30px 25px 100px;
+        }
+
+
+        .page-content {
+            width:
+                min(100%, 950px);
+
+            margin:
+                0 auto;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           ZURÜCK-BUTTON
+           ===================================================== */
+
+        .back-button {
+            display: inline-block;
+
+            margin-bottom: 60px;
+
+            padding:
+                11px 20px;
+
+            border:
+                1px solid var(--taupe);
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(255,253,249,.90);
+
+            color:
+                var(--brown);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+
+        .back-button:hover {
+            transform:
+                translateY(-2px);
+
+            background:
+                var(--paper);
+        }
+
+
+        /* =====================================================
+           TITEL
+           ===================================================== */
+
+        .small-label {
+            text-transform: uppercase;
+
+            letter-spacing: .25em;
+
+            font-size: 11px;
+
+            color: var(--taupe);
+        }
+
+
+        .page-title {
+            font-size:
+                clamp(55px, 9vw, 82px);
+
+            line-height: 1;
+
+            margin:
+                15px 0 25px;
+        }
+
+
+        .page-intro {
+            max-width: 650px;
+
+            margin:
+                0 auto 70px;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           HOTEL-BEREICHE
+           ===================================================== */
+
+        .hotel-section {
+            margin-bottom: 60px;
+        }
+
+
+        .hotel-section-title {
+            font-size:
+                clamp(35px, 5vw, 48px);
+
+            margin:
+                0 0 25px;
+        }
+
+
+        .hotel-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            text-align: left;
+        }
+
+
+        /* =====================================================
+           HOTEL-KARTEN
+           ===================================================== */
+
+        .hotel-card {
+            padding:
+                35px 30px;
+
+            background:
+                rgba(255,253,249,.92);
+
+            border:
+                1px solid var(--line);
+
+            box-shadow:
+                0 15px 45px
+                rgba(70,55,40,.08);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+
+        .hotel-card:hover {
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(70,55,40,.12);
+        }
+
+
+        /* =====================================================
+           ICON
+           ===================================================== */
+
+        .hotel-icon {
+            display: block;
+
+            margin-bottom: 15px;
+
+            font-size: 26px;
+
+            color: var(--brown);
+        }
+
+
+        /* =====================================================
+           HOTEL-TITEL
+           ===================================================== */
+
+        .hotel-card h3 {
+            font-size: 30px;
+
+            line-height: 1.1;
+
+            margin:
+                0 0 12px;
+        }
+
+
+        /* =====================================================
+           HOTEL-TEXT
+           ===================================================== */
+
+        .hotel-card p {
+            max-width: none;
+
+            margin:
+                0 0 12px;
+
+            font-size: 14px;
+        }
+
+
+        .hotel-card p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           HOTEL-LINK
+           ===================================================== */
+
+        .hotel-link {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            color: var(--brown);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+
+            text-decoration:
+                underline;
+
+            text-underline-offset: 3px;
+        }
+
+
+        .hotel-link:hover {
+            color: var(--dark);
+        }
+
+
+        /* =====================================================
+           GUT ZU WISSEN
+           ===================================================== */
+
+        .info-section {
+            margin-top: 20px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            text-align: left;
+        }
+
+
+        .info-card {
+            padding:
+                35px 30px;
+
+            background:
+                rgba(255,253,249,.92);
+
+            border:
+                1px solid var(--line);
+
+            box-shadow:
+                0 15px 45px
+                rgba(70,55,40,.08);
+        }
+
+
+        .info-card h3 {
+            font-size: 30px;
+
+            line-height: 1.1;
+
+            margin:
+                0 0 15px;
+        }
+
+
+        .info-card p {
+            max-width: none;
+
+            margin:
+                0;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SPRACHEN
+           ===================================================== */
+
+        .language-de {
+            display: initial;
+        }
+
+
+        .language-sq {
+            display: none;
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding:
+                    20px 20px 70px;
+            }
+
+
+            .back-button {
+                margin-bottom:
+                    45px;
+            }
+
+
+            .page-intro {
+                margin-bottom:
+                    45px;
+            }
+
+
+            .hotel-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .info-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hotel-card {
+                padding:
+                    28px 22px;
+            }
+
+
+            .info-card {
+                padding:
+                    28px 22px;
+            }
+
+
+            .hotel-card h3 {
+                font-size:
+                    28px;
+            }
+
+
+            .info-card h3 {
+                font-size:
+                    28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+        <div class="page-content">
+
+
+            <!-- =================================================
+                 ZURÜCK ZU GÄSTE
+                 ================================================= -->
+
+	<a
+	    href="index.html#guests"
+	    class="back-button"
+	    onclick="sessionStorage.setItem('returnToGuests', 'true')"
+	>
+
+                <span class="language-de">
+                    ← Zurück zu Gäste
+                </span>
+
+                <span class="language-sq">
+                    ← Kthehu te mysafirët
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 TITEL
+                 ================================================= -->
+
+            <p class="small-label language-de">
+                Für unsere Gäste
+            </p>
+
+            <p class="small-label language-sq">
+                Për mysafirët tanë
+            </p>
+
+
+            <h1 class="page-title language-de">
+                Aufenthalt
+            </h1>
+
+            <h1 class="page-title language-sq">
+                Qëndrimi
+            </h1>
+
+
+            <p class="page-intro language-de">
+                Damit ihr euren Aufenthalt in Struga entspannt geniessen könnt,
+                haben wir hier einige Unterkunftsmöglichkeiten und hilfreiche
+                Informationen für euch zusammengestellt.
+            </p>
+
+
+            <p class="page-intro language-sq">
+                Që ta shijoni qëndrimin tuaj në Strugë sa më qetë dhe rehat,
+                kemi përmbledhur këtu disa mundësi akomodimi dhe informacione
+                të dobishme për ju.
+            </p>
+
+
+
+            <!-- =================================================
+                 HOTEL-EMPFEHLUNGEN
+                 ================================================= -->
+
+            <section class="hotel-section">
+
+
+                <p class="small-label language-de">
+                    Unterkunft
+                </p>
+
+                <p class="small-label language-sq">
+                    Akomodimi
+                </p>
+
+
+                <h2 class="hotel-section-title language-de">
+                    Hotel-Empfehlungen
+                </h2>
+
+                <h2 class="hotel-section-title language-sq">
+                    Rekomandime hotelesh
+                </h2>
+
+
+                <p class="page-intro language-de">
+                    Hier findet ihr einige Hotelempfehlungen mit weiteren
+                    Informationen und direkten Buchungsmöglichkeiten.
+                </p>
+
+                <p class="page-intro language-sq">
+                    Këtu do të gjeni disa rekomandime hotelesh me informacione
+                    të mëtejshme dhe mundësi direkte për rezervim.
+                </p>
+
+
+                <div class="hotel-grid">
+
+
+                    <!-- =================================================
+                         HOTEL IZGREV
+                         ================================================= -->
+
+                    <article class="hotel-card">
+
+
+                        <h3>
+                            Hotel Izgrev Spa & Aquapark
+                        </h3>
+
+
+                        <p class="language-de">
+                            Ein Hotel mit Spa-Bereich und Aquapark direkt
+                            am Ohridsee.
+                        </p>
+
+
+                        <p class="language-sq">
+                            Një hotel me spa dhe aquapark, i vendosur
+                            direkt pranë Liqenit të Ohrit.
+                        </p>
+
+
+                        <a
+                            href="https://hotelizgrev.com/en/"
+                            class="hotel-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="language-de">
+                                Hotel ansehen
+                            </span>
+
+                            <span class="language-sq">
+                                Shiko hotelin
+                            </span>
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         HOTEL DRIM
+                         ================================================= -->
+
+                    <article class="hotel-card">
+
+
+                        <h3>
+                            Hotel Drim & SPA
+                        </h3>
+
+
+                        <p class="language-de">
+                            Ein bekanntes Hotel direkt in Struga,
+                            ideal für einen Aufenthalt in der Stadt.
+                        </p>
+
+
+                        <p class="language-sq">
+                            Një hotel i njohur direkt në Strugë,
+                            ideal për një qëndrim në qytet.
+                        </p>
+
+
+                        <a
+                            href="https://drim.com.mk/"
+                            class="hotel-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="language-de">
+                                Hotel ansehen
+                            </span>
+
+                            <span class="language-sq">
+                                Shiko hotelin
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         HOTEL FREYA
+                         ================================================= -->
+
+                    <article class="hotel-card">
+
+
+                        <h3>
+                            Hotel Freya
+                        </h3>
+
+
+                        <p class="language-de">
+                            Eine weitere Unterkunftsmöglichkeit in Struga
+                            für euren Aufenthalt.
+                        </p>
+
+
+                        <p class="language-sq">
+                            Një tjetër mundësi akomodimi në Strugë
+                            për qëndrimin tuaj.
+                        </p>
+
+
+                        <a
+                            href="https://www.freya.mk/"
+                            class="hotel-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="language-de">
+                                Hotel ansehen
+                            </span>
+
+                            <span class="language-sq">
+                                Shiko hotelin
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 GUT ZU WISSEN
+                 ================================================= -->
+
+            <section class="info-section">
+
+
+                <p class="small-label language-de">
+                    Gut zu wissen
+                </p>
+
+                <p class="small-label language-sq">
+                    Mirë të dini
+                </p>
+
+
+                <h2 class="hotel-section-title language-de">
+                    Praktische Informationen
+                </h2>
+
+                <h2 class="hotel-section-title language-sq">
+                    Informacione praktike
+                </h2>
+
+
+                <div class="info-grid">
+
+
+                    <!-- =================================================
+                         WÄHRUNG
+                         ================================================= -->
+
+                    <article class="info-card">
+
+
+                        <h3 class="language-de">
+                            Währung
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Monedha
+                        </h3>
+
+
+                        <p class="language-de">
+                            In Nordmazedonien wird mit dem Mazedonischen
+                            Denar (MKD) bezahlt. In vielen Restaurants,
+                            Cafés und Geschäften werden häufig auch Euro
+                            akzeptiert. Dennoch empfehlen wir, etwas Bargeld
+                            in Landeswährung dabei zu haben, da dies vielerorts
+                            das gängigste Zahlungsmittel ist.
+                        </p>
+
+
+                        <p class="language-sq">
+                            Në Maqedoninë e Veriut përdoret Denari Maqedonas
+                            (MKD). Në shumë restorante, kafene dhe dyqane
+                            pranohen shpesh edhe euro. Megjithatë, ju
+                            rekomandojmë të keni me vete edhe pak para në
+                            monedhën vendase, pasi në shumë vende kjo është
+                            mënyra më e zakonshme e pagesës.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         SPRACHE
+                         ================================================= -->
+
+                    <article class="info-card">
+
+
+                        <h3 class="language-de">
+                            Sprache
+                        </h3>
+
+                        <h3 class="language-sq">
+                            Gjuha
+                        </h3>
+
+
+                        <p class="language-de">
+                            In der Region werden hauptsächlich Albanisch
+                            und Mazedonisch gesprochen. In touristischen
+                            Bereichen kommt man oft auch mit Englisch
+                            gut zurecht.
+                        </p>
+
+
+                        <p class="language-sq">
+                            Në këtë rajon fliten kryesisht shqip dhe
+                            maqedonisht. Në zonat turistike mund të
+                            komunikoni shpesh edhe në anglisht.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SPRACHLOGIK
+         ===================================================== -->
+
+    <script>
+
+        // =====================================================
+        // GESPEICHERTE SPRACHE LADEN
+        // =====================================================
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+
+        // =====================================================
+        // RICHTIGEN DISPLAY-WERT BESTIMMEN
+        // =====================================================
+
+        function getCorrectDisplayValue(element) {
+
+            const tag =
+                element.tagName.toLowerCase();
+
+
+            if (tag === "span") {
+                return "inline";
+            }
+
+
+            if (tag === "a") {
+                return "inline-block";
+            }
+
+
+            if (tag === "button") {
+                return "inline-block";
+            }
+
+
+            return "block";
+
+        }
+
+
+        // =====================================================
+        // SPRACHE SETZEN
+        // =====================================================
+
+        function setPageLanguage(language) {
+
+            const germanElements =
+                document.querySelectorAll(
+                    ".language-de"
+                );
+
+
+            const albanianElements =
+                document.querySelectorAll(
+                    ".language-sq"
+                );
+
+
+            // =================================================
+            // DEUTSCH
+            // =================================================
+
+            if (language === "de") {
+
+                document.documentElement.lang = "de";
+
+
+                germanElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            getCorrectDisplayValue(element);
+
+                    }
+                );
+
+
+                albanianElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
+                    }
+                );
+
+            }
+
+
+            // =================================================
+            // ALBANISCH
+            // =================================================
+
+            if (language === "sq") {
+
+                document.documentElement.lang = "sq";
+
+
+                germanElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
+                    }
+                );
+
+
+                albanianElements.forEach(
+                    function(element) {
+
+                        element.style.display =
+                            getCorrectDisplayValue(element);
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        // =====================================================
+        // SPRACHE BEIM LADEN SETZEN
+        // =====================================================
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                if (savedLanguage === "sq") {
+
+                    setPageLanguage("sq");
+
+                } else {
+
+                    setPageLanguage("de");
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
